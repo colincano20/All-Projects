@@ -4,15 +4,15 @@ def quiz():
     D = {
         1: "George Washington", 2: "John Adams", 3: "Thomas Jefferson", 4: "James Madison",
         5: "James Monroe", 6: "John Quincy Adams", 7: "Andrew Jackson", 8: "Martin Van Buren",
-        9: "William Henry Harrison", 10: "John Tyler", 11: "James K. Polk", 12: "Zachary Taylor",
+        9: "William Henry Harrison", 10: "John Tyler", 11: "James Polk", 12: "Zachary Taylor",
         13: "Millard Fillmore", 14: "Franklin Pierce", 15: "James Buchanan", 16: "Abraham Lincoln",
-        17: "Andrew Johnson", 18: "Ulysses S. Grant", 19: "Rutherford B. Hayes", 20: "James A. Garfield",
-        21: "Chester A. Arthur", 22: "Grover Cleveland", 23: "Benjamin Harrison", 24: "Grover Cleveland*",
+        17: "Andrew Johnson", 18: "Ulysses Grant", 19: "Rutherford Hayes", 20: "James Garfield",
+        21: "Chester Arthur", 22: "Grover Cleveland", 23: "Benjamin Harrison", 24: "Grover Cleveland*",
         25: "William McKinley", 26: "Theodore Roosevelt", 27: "William Howard Taft", 28: "Woodrow Wilson",
-        29: "Warren G. Harding", 30: "Calvin Coolidge", 31: "Herbert Hoover", 32: "Franklin D. Roosevelt",
-        33: "Harry S. Truman", 34: "Dwight D. Eisenhower", 35: "John F. Kennedy", 36: "Lyndon B. Johnson",
+        29: "Warren Harding", 30: "Calvin Coolidge", 31: "Herbert Hoover", 32: "Franklin Roosevelt",
+        33: "Harry Truman", 34: "Dwight Eisenhower", 35: "John Kennedy", 36: "Lyndon Johnson",
         37: "Richard Nixon", 38: "Gerald Ford", 39: "Jimmy Carter", 40: "Ronald Reagan",
-        41: "George H. W. Bush", 42: "Bill Clinton", 43: "George W. Bush", 44: "Barack Obama",
+        41: "George Bush", 42: "Bill Clinton", 43: "George Bush", 44: "Barack Obama",
         45: "Donald Trump", 46: "Joe Biden", 47: "Donald Trump*"
     }
     print("Welcome to the President Guessing Game! You will be randomly asked what was the number of a certain president. \nThere will be 5 questions. If you see an *, it means it was their 2nd non-consecutive term.")
@@ -84,6 +84,40 @@ def quiz():
     elif score == 0:
         print("Did you skip history class? Embarassing.... you got 0 right....")
 
+    if score >= 3:
+        # Get a random president number
+        random_number = randint(1, 46)
+        correct_name = D[random_number]
+
+        # Ask user to guess the president's name based on the number
+        print(f"Who was the {random_number}th president?")
+        Q1 = input("Enter the president's name: ").strip()
+
+        # Check if the user's guess is correct
+        if Q1.lower() == correct_name.lower():
+            print("Correct!")
+        else:
+            print(f"No, the correct answer was {correct_name}.")
+
+        random_number = randint(1, 46)
+        correct_name = D[random_number]
+        print(f"Who was the {random_number}th president?")
+        Q1 = input("Enter the president's name: ").strip()
+        if Q1.lower() == correct_name.lower():
+            print("Correct!")
+        else:
+            print(f"No, the correct answer was {correct_name}.")
+
+        random_number = randint(1, 46)
+        correct_name = D[random_number]
+        print(f"Who was the {random_number}th president?")
+        Q1 = input("Enter the president's name: ").strip()
+        if Q1.lower() == correct_name.lower():
+            print("Correct!")
+        else:
+            print(f"No, the correct answer was {correct_name}.")
+    else:
+        print("I am sorry, but you scored too low to move on...")
 
     '''
     add section if u get at least 3/5, where u guess president based off number(vise versa essentially)
