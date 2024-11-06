@@ -85,22 +85,8 @@ def quiz():
         print("Did you skip history class? Embarassing.... you got 0 right....")
 
 
-    if score >= 3:
-        play()
-
-    def play():
-     # Get a random president number
-        random_number = randint(1, 46)
-        correct_name = D[random_number]
-    
-        # Ask user to guess the president's name based on the number
-        print(f"Who was the {random_number}th president?")
-        user_guess = input("Enter the president's name: ").strip()
-    
-    # Check if the user's guess is correct
-        if user_guess.lower() == correct_name.lower():
-            print("Correct!")
-        else:
-            print(f"No, the correct answer was {correct_name}.")
+    '''
+    add section if u get at least 3/5, where u guess president based off number(vise versa essentially)
+    '''
 
 quiz()
