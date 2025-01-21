@@ -85,6 +85,7 @@ def quiz():
         print("Did you skip history class? Embarassing.... you got 0 right....")
 
     if score >= 3:
+        print("You have scored at least 3/5! You have unlocked the next level!")
         # Get a random president number
         random_number = randint(1, 46)
         correct_name = D[random_number]
@@ -96,6 +97,7 @@ def quiz():
         # Check if the user's guess is correct
         if Q1.lower() == correct_name.lower():
             print("Correct!")
+            score +=1
         else:
             print(f"No, the correct answer was {correct_name}.")
 
@@ -105,6 +107,7 @@ def quiz():
         Q1 = input("Enter the president's name: ").strip()
         if Q1.lower() == correct_name.lower():
             print("Correct!")
+            score +=1
         else:
             print(f"No, the correct answer was {correct_name}.")
 
@@ -114,8 +117,10 @@ def quiz():
         Q1 = input("Enter the president's name: ").strip()
         if Q1.lower() == correct_name.lower():
             print("Correct!")
+            score +=1
         else:
             print(f"No, the correct answer was {correct_name}.")
+        print(f"Your final score was: {score}")
     else:
         print("I am sorry, but you scored too low to move on...")
 
